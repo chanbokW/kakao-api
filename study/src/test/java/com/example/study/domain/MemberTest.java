@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.study.dto.MemberDto;
 import com.example.study.repository.MemberRepository;
 import com.example.study.service.MemberService;
 
@@ -24,10 +25,9 @@ public class MemberTest {
 	@Test
 	@DisplayName("회원가입 테스트")
 	public void registerMember() {
-		Member member = new Member();
-		member.setMemberid("cks");
-		member.setPassword("pw001");
-		member.setName("helloworld");
+		MemberDto dto = new MemberDto("id002", "pw002", "spring");
+		Member member = dto.toEntity();
+		
 		
 		Long id =ms.registerMember(member);
 		

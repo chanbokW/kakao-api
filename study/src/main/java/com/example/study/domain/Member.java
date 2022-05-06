@@ -1,5 +1,7 @@
 package com.example.study.domain;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,13 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
+import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
 @Getter
-@ToString
 public class Member {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -26,20 +28,15 @@ public class Member {
 	
 	@Column(nullable = false)
 	private String name;
+	
+	//나중에 role 추가할 예정
 
 
-
-	public void setMemberid(String memberid) {
+	@Builder
+	public Member(String memberid,String password,String name) {
 		this.memberid = memberid;
-	}
-
-	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public void setName(String name) {
 		this.name = name;
 	}
-	
 	
 }

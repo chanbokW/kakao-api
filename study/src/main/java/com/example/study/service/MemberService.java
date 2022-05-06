@@ -23,8 +23,4 @@ public class MemberService {
 	}
 	
 	
-	@Transactional(readOnly = true)
-	public Member login(Member member) {
-		return memberRepository.findByMemberidAndPassword(member.getMemberid(), member.getPassword());
-	}
 }
