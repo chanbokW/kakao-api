@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Kakao JavaScript SDK</title>
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+ <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head>
 <body>
 	<a id="custom-login-btn" href="javascript:loginWithKakao()">
@@ -14,11 +14,14 @@
         />
       </a>
       <p id="token-result"></p>
+      
+     
 	<script>
-        function kakaoLogin(){
+
+        window.Kakao.init('javascript key');
+        function loginWithKakao(){
             Kakao.Auth.authorize({
-                redirectUri:'http://localhost:8080/login',
-                prompts: 'login'
+                redirectUri:'http://localhost:8080//kakao/token'
             })
         }
          // 아래는 데모를 위한 UI 코드입니다.

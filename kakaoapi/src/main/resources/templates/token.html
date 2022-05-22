@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+</head>
+<body>
+	
+	<h1>토큰발급</h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<td>tokenType</td>
+				<td>accessToken</td>
+				<td>idToken</td>
+				<td>expiresIn</td>
+				<td>refreshToken</td>
+				<td>refreshTokenExpiresIn</td>
+				<td>scope</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td th:text="${response.tokenType}"></td>
+				<td th:text="${response.accessToken}"></td>
+				<td th:text="${response.idToken}"></td>
+				<td th:text="${response.expiresIn}"></td>
+				<td th:text="${response.refreshToken}"></td>
+				<td th:text="${response.refreshTokenExpiresIn}"></td>
+				<td th:text="${response.scope}"></td>
+			</tr>
+		</tbody>
+		
+	</table>
+</body>
+</html>
