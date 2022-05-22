@@ -18,7 +18,7 @@ import lombok.ToString;
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class ResponseKakao {
 	
-	private String tokenType;
+    private String tokenType;
     private String accessToken;
     private String idToken;
     private Integer expiresIn;
