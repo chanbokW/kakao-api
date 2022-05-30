@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.mybatis.mapper.BoardMapper">
+	<insert id="addBoardTest" parameterType="Board">
+		INSERT INTO board
+	(
+		title, 
+		contens, 
+		usesrid, 
+		create_date
+	)VALUES (
+		#{title}, 
+		#{contens}, 
+		#{userId}, 
+		NOW()
+	)
+	</insert>
+	
+	<insert id="addBoardTest2" parameterType="java.util.List">
+		INSERT INTO board
+		(
+			title, 
+			contens, 
+			usesrid, 
+			create_date
+		)VALUES
+		<foreach collection="list" item="item" separator=",">
+		(
+			#{item.title}, 
+			#{item.contens}, 
+			#{item.userId}, 
+			NOW()
+		)
+		</foreach>
+	</insert>
+</mapper>
